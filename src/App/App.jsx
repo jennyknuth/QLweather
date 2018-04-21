@@ -6,19 +6,24 @@ import styles from './App.scss';
 class App extends React.Component {
   state = {
     currently: {},
+    loading: true,
     location: {},
-    value: window.location.search.split('=')[1].replace('+', ' '),
+    value: window.location.search && window.location.search.split('=')[1].replace('+', ' '),
   }
 
   componentDidMount() {
-    const city = window.location.search.split('=')[1];
+    const city = window.location.search ? window.location.search.split('=')[1] : '?city=boulder';
     fetch(`/location/${city}`)
       .then(res => res.json())
       .then((loc) => {
         this.setState({ location: loc });
         fetch(`/api/weather/${loc.lat}/${loc.lng}`)
           .then(res => res.json())
-          .then(data => this.setState({ currently: data.currently }));
+          .then((data) => {
+            this.setState({ currently: data.currently });
+            this.setState({ loading: false });
+          })
+          .catch(error => console.log(error));
       });
   }
 
