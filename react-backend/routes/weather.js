@@ -4,10 +4,9 @@ var router = express.Router();
 var axios = require('axios');
 
 /* GET api/weather */
-router.get('/api/weather/:lat/:lon', function(req, res, next) {
+router.get('/api/weather/:lat/:lng', function(req, res, next) {
   // var baseUrl = 'https://api.darksky.net';
-  // const forecastUrl = baseUrl + '/forecast/' + process.env.API_KEY + '/' + req.params.lat + ',' + req.params.lon;
-  // console.log('forecastUrl', forecastUrl);
+  // const forecastUrl = baseUrl + '/forecast/' + process.env.API_KEY + '/' + req.params.lat + ',' + req.params.lng;
   // axios.get(forecastUrl)
   //   .then(response => res.json(response.data))
   //   .catch(error => error);
