@@ -50,6 +50,7 @@
     "test:unit": "test --env=jsdom",
     "test": "npm run test:lint:js && npm run test:lint:css && npm run test:unit"
   },
+  "proxy": "http://localhost:3001",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,mjs}"
