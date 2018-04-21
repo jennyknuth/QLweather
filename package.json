@@ -112,7 +112,7 @@
           ],
           "required": {
             "every": [
-            "id"
+              "id"
             ]
           }
         }
