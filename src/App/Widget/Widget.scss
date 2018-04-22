@@ -1,12 +1,12 @@
 
 %widget {
-  background-color: gold;
+  position: relative;
+  border: 1rem solid gray;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  padding: 1rem;
 }
 
 .widget {
@@ -20,4 +20,5 @@
   height: 50vh;
   width: 50vh;
   transition: height 1000ms, width 1000ms;
+  background-color: white;
 }

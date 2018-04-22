@@ -6,7 +6,7 @@ import Body from '../Body/Body';
 import iconToTheme from '../Shared/iconToTheme';
 
 import styles from './Widget.scss';
-import theme from '../Shared/Color.scss';
+import theme from '../Shared/Border.scss';
 
 const Widget = ({ active, children }) => {
   const {
@@ -31,6 +31,7 @@ const Widget = ({ active, children }) => {
       <Header
         icon={icon}
         summary={summary}
+        temperature={temperature}
       />
       <Body
         precipProbability={precipProbability}
