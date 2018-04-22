@@ -51,23 +51,9 @@ Widget.propTypes = {
   children: PropTypes.shape({
     summary: PropTypes.string,
     icon: PropTypes.string,
-    nearestStormDistance: PropTypes.number,
-    precipIntensity: PropTypes.number,
-    precipIntensityError: PropTypes.number,
     precipProbability: PropTypes.number,
     precipType: PropTypes.string,
     temperature: PropTypes.number,
-    apparentTemperature: PropTypes.number,
-    dewPoint: PropTypes.number,
-    humidity: PropTypes.number,
-    pressure: PropTypes.number,
-    windSpeed: PropTypes.number,
-    windGust: PropTypes.number,
-    windBearing: PropTypes.number,
-    cloudCover: PropTypes.number,
-    uvIndex: PropTypes.number,
-    visibility: PropTypes.number,
-    ozone: PropTypes.number,
   }),
 };
 

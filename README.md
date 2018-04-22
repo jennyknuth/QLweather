@@ -34,9 +34,7 @@ $ yarn
 
 ### Server
 
-Open a new tab in your terminal.
-
-Navigate to the react backend folder
+Navigate to the `react-backend` folder
 
 ```bash
 $ cd react-backend
@@ -78,4 +76,24 @@ $ yarn start
 ```
 Your browser will open, the client is running.
 
-Explore the current weather in your favorite city!
+Explore the current weather in your favorite city! (Hopefully your API key works…)
+
+## Relevant files
+
+Usually I try to keep these coding tasks as simple as possible, with maybe three files: index.html, app.js, and styles.css. But in this case I wanted to use react with css modules and needed a backend server…hence webpack and express and lots of pre-populated files and dependencies!
+
+A quick rundown by folder, of what I did:
+
+In the root, I added a few things to the package.json in addition to what comes with create react app (dotenv, classnames, etc.), set the connection to the proxy server there, and added a few eslint rule overrides.
+
+In the `config` folder I did the setup in webpack to use scss and css modules and a linter, but that's about it for that folder.
+
+In the `public` folder I added some images and fonts (including a weather icons font) and a favicon.
+
+In the `react-backend` folder there is an express server. Most of the customized files are in the `Routes` directory. The `weather` route is where the calls to the Dark Sky API happen and the results are then served to a local `api/weather` endpoint. The `location` route uses an npm module, `city-to-coords`, that worked pretty well to return latitude and longitude from a fuzzy-ish search of city names. (It actually borrows this functionality from weather-js, another npm module that serves up the current weather for locations…but the assignment was to use Dark Sky, hence the redundancy there.)
+
+I did not touch the `scripts` folder.
+
+The bulk of the code I wrote can be found in the `src/App` folder. `App.jsx` is the container component that stores view state and gets the data and sends it down to the purely presentational components: widget, header, and body. The `Shared` folder holds a sort of reusable 'translation' utility along with shared style files that the input form, widget, header, and body all use to change their theme based on current weather conditions.
+
+I envisioned this as a small weather widget that could be adaptable to a variety of information sources or APIs. Just pass in five  props for icon, summary, temperature, precipitation probability, and precipitation type, make a couple of translation objects to bridge from the API to the provided classes, and it should work.
