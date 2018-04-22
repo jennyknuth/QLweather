@@ -1,0 +1,23 @@
+.body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  height: 70%;
+  width: 100%;
+  color: white;
+}
+
+.time {
+  font-size: 4vh;
+}
+
+.temperature {
+  font-size: 10vh;
+}
+
+.precip {
+  font-size: 5vh;
+}

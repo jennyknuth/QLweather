@@ -4,7 +4,7 @@ import iconToTheme from './Shared/iconToTheme';
 import Widget from './Widget/Widget';
 
 import styles from './App.scss';
-import theme from './Shared/Color.scss';
+import theme from './Shared/Background.scss';
 
 class App extends React.Component {
   state = {
@@ -50,7 +50,7 @@ class App extends React.Component {
       <div className={styles.app}>
         <form className={formClasses} >
           <label className={styles.label} htmlFor='city'>
-            Type in a city:
+            enter a city:
           </label>
           <input className={styles.input} name='city' type="text" value={value} onChange={e => this.handleChange(e)} />
         </form>

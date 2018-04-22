@@ -34,6 +34,7 @@ const Widget = ({ active, children }) => {
         temperature={temperature}
       />
       <Body
+        icon={icon}
         precipProbability={precipProbability}
         precipType={precipType}
         time={time}
