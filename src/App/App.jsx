@@ -10,22 +10,21 @@ class App extends React.Component {
   state = {
     currently: {},
     loading: true,
-    // location: {},
-    value: window.location.search && window.location.search.split('=')[1].replace('+', ' '),
+    value: (window.location.search && window.location.search.split('=')[1].replace('+', ' ').replace('%2C', ',')) || 'boulder',
   }
 
   componentDidMount() {
-    const city = window.location.search ? window.location.search.split('=')[1] : '?city=boulder';
+    const city = window.location.search ? window.location.search.split('=')[1] : 'boulder';
     fetch(`/location/${city}`)
       .then(res => res.json())
       .then((loc) => {
-        // this.setState({ location: loc });
         fetch(`/api/weather/${loc.lat}/${loc.lng}`)
           .then(res => res.json())
           .then((data) => {
             this.setState({ currently: data.currently });
             this.setState({ loading: false });
-          });
+          })
+          .catch(error => error);
       });
   }
 
