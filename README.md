@@ -1,8 +1,8 @@
-This setup was ejected from [create react app](https://github.com/facebookincubator/create-react-app) the following custom features were added:
+This setup was ejected from [create react app](https://github.com/facebookincubator/create-react-app) and the following custom features were added:
 - yarn
 - css modules
 - scss
-- eslint linting extending airbnb
+- eslint extending airbnb rules
 - stylelint extending stylint standard
 - jest and enzyme tests
 - Lato
@@ -26,21 +26,17 @@ You will also need a Dark Sky API key, which you can get here: https://darksky.n
 
 ### Client
 
-From the root of the directory, install node modules with yarn `npm install -g yarn`
+From the root of the directory, install node modules with yarn (if you need yarn, `npm install -g yarn`).
 
 ```bash
 $ yarn
 ```
 
-Run the client
-
-```bash
-$ yarn start
-```
-
 ### Server
 
-cd into the react backend folder
+Open a new tab in your terminal.
+
+Navigate to the react backend folder
 
 ```bash
 $ cd react-backend
@@ -52,15 +48,34 @@ Install backend packages with yarn
 $ yarn
 ```
 
-### API key
+#### API key
 
-In the `react-backend` directory add an `.env` file (add it at the same level as the react backend's `package.json`) with the following contents:
-
-```yaml
-API_KEY=<your Dark Sky API_KEY from https://darksky.net/dev>
+Before you start the server, you'll need to set your `API_KEY`. From the command line, type
+```bash
+export API_KEY=<your-Dark-Sky-API_KEY-from https://darksky.net/dev>
 ```
-Start proxy server:
+From the `react-backend` directory, start the proxy server:
+
+```bash
+$ yarn start
+```
+or
 
 ```bash
 $ node bin/www
 ```
+
+Your back-end server is running.
+
+### Start the Client
+
+Return to the root of your directory, one level out from the backend folder.
+
+Start the client
+
+```bash
+$ yarn start
+```
+Your browser will open, the client is running.
+
+Explore the current weather in your favorite city!
