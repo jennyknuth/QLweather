@@ -7,7 +7,7 @@ import styles from './Header.scss';
 import theme from '../Shared/Image.scss';
 
 const iconToClass = {
-  'clear-day': 'wi wi-sunny-day',
+  'clear-day': 'wi wi-day-sunny',
   'clear-night': 'wi wi-night-clear',
   rain: 'wi wi-rain',
   snow: 'wi wi-snow',
