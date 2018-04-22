@@ -1,0 +1,23 @@
+
+%widget {
+  background-color: gold;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+
+.widget {
+  @extend %widget;
+  height: 0;
+  width: 0;
+}
+
+.active {
+  @extend %widget;
+  height: 50vh;
+  width: 50vh;
+  transition: height 1000ms, width 1000ms;
+}

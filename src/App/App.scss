@@ -1,8 +1,50 @@
 :root {
-  background-color: aliceblue;
-  position: relative;
   display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.app {
+  display: flex;
+  position: relative;
+  height: 100vh;
   justify-content: center;
   align-items: center;
-  height: 100%;
+}
+
+.form {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 20vmin;
+  width: 20vmin;
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 2rem;
+  top: 0;
+  left: 0;
+}
+
+.label {
+  font-weight: 300;
+  color: white;
+}
+
+%input {
+  border: none;
+  font-size: 16px;
+  padding: 0.5rem;
+  border-radius: 7px;
+  text-align: center;
+}
+.input{
+  @extend %input;
+}
+
+.submit {
+  @extend %input;
+  padding: 0.5rem;
+  margin: 0.5rem auto;
+  min-height: 2rem;
 }

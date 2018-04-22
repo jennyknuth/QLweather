@@ -1,7 +1,10 @@
 import React from 'react';
+import classNames from 'classnames';
+import iconToTheme from './Shared/iconToTheme';
 import Widget from './Widget/Widget';
 
 import styles from './App.scss';
+import theme from './Shared/Color.scss';
 
 class App extends React.Component {
   state = {
@@ -22,8 +25,7 @@ class App extends React.Component {
           .then((data) => {
             this.setState({ currently: data.currently });
             this.setState({ loading: false });
-          })
-          .catch(error => console.log(error));
+          });
       });
   }
 
@@ -35,16 +37,24 @@ class App extends React.Component {
     console.log('currently', this.state.currently);
     console.log('location', this.state.location);
     console.log('value', this.state.value);
+    const { currently, loading, value } = this.state;
+    const active = currently !== undefined;
+    const iconTheme = iconToTheme[currently.icon];
+    const formClasses = classNames(
+      styles.form,
+      theme[iconTheme],
+    );
+
     return (
+      loading ? null :
       <div className={styles.app}>
-        <form>
-          <label htmlFor='city'>
-            Type in a city name:
+        <form className={formClasses} >
+          <label className={styles.label} htmlFor='city'>
+            Type in a city:
           </label>
-          <input name='city' type="text" value={this.state.value} onChange={e => this.handleChange(e)} />
-          <input type="submit" value="Submit" />
+          <input className={styles.input} name='city' type="text" value={value} onChange={e => this.handleChange(e)} />
         </form>
-        <Widget>{this.state.currently}</Widget>
+        <Widget active={active}>{currently}</Widget>
       </div>
     );
   }
