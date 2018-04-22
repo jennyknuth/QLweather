@@ -15,7 +15,6 @@ const Widget = ({ active, children }) => {
     precipType,
     summary,
     temperature,
-    time,
   } = children;
 
   const iconTheme = iconToTheme[icon];
@@ -37,7 +36,6 @@ const Widget = ({ active, children }) => {
         icon={icon}
         precipProbability={precipProbability}
         precipType={precipType}
-        time={time}
         temperature={temperature}
       />
     </div>
@@ -51,7 +49,6 @@ Widget.defaultProps = {
 Widget.propTypes = {
   active: PropTypes.bool.isRequired,
   children: PropTypes.shape({
-    time: PropTypes.number,
     summary: PropTypes.string,
     icon: PropTypes.string,
     nearestStormDistance: PropTypes.number,

@@ -10,8 +10,9 @@
   color: white;
 }
 
-.time {
+.title {
   font-size: 4vh;
+  text-transform: uppercase;
 }
 
 .temperature {
@@ -19,5 +20,8 @@
 }
 
 .precip {
-  font-size: 5vh;
+  font-size: 3vh;
+  @media (min-width: 600px) {
+    font-size: 5vh;
+  }
 }

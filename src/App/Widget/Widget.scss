@@ -2,7 +2,7 @@
 %widget {
   position: relative;
   border: 1rem solid gray;
-  border-radius: 23px;
+  border-radius: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -17,8 +17,12 @@
 
 .active {
   @extend %widget;
-  height: 50vh;
-  width: 50vh;
+  height: 40vh;
+  width: 40vh;
   transition: height 1000ms, width 1000ms;
   background-color: white;
+  @media (min-width: 600px) {
+    height: 60vh;
+    width: 60vh;
+  }
 }
