@@ -29,11 +29,15 @@ const Body = ({
   );
 };
 
+Body.defaultProps = {
+  precipType: 'precip',
+};
+
 Body.propTypes = {
   icon: PropTypes.string.isRequired,
   temperature: PropTypes.number.isRequired,
   precipProbability: PropTypes.number.isRequired,
-  precipType: PropTypes.string.isRequired,
+  precipType: PropTypes.string,
 };
 
 

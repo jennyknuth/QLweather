@@ -10,7 +10,7 @@ class App extends React.Component {
   state = {
     currently: {},
     loading: true,
-    location: {},
+    // location: {},
     value: window.location.search && window.location.search.split('=')[1].replace('+', ' '),
   }
 
@@ -19,7 +19,7 @@ class App extends React.Component {
     fetch(`/location/${city}`)
       .then(res => res.json())
       .then((loc) => {
-        this.setState({ location: loc });
+        // this.setState({ location: loc });
         fetch(`/api/weather/${loc.lat}/${loc.lng}`)
           .then(res => res.json())
           .then((data) => {
@@ -34,9 +34,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log('currently', this.state.currently);
-    console.log('location', this.state.location);
-    console.log('value', this.state.value);
     const { currently, loading, value } = this.state;
     const active = currently !== undefined;
     const iconTheme = iconToTheme[currently.icon];
